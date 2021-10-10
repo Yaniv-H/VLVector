@@ -63,8 +63,6 @@ class VLVector {
   VLVector (const VLVector<T, StaticCapacity> &rhs)
       : _size (rhs._size), _capacity (rhs._capacity)
   {
-    //ניתן להניח כי בעת בניית וקטור חדש דרך בנאי ההעתקה/דרך השמה, ניתן
-    // להניח שהטיפוסים של הוקטורים זהים וגודל הזיכרון הסטטי שלהם זהה
     if (_size > StaticCapacity)
     { _heap_storage = new T[_capacity]; }
     std::copy (rhs.begin (), rhs.end (), this->begin ());
